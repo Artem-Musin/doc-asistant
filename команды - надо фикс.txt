@@ -1,0 +1,56 @@
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\user\Desktop\ddd\Doc-Asistant>mkdir doc-asistant
+
+C:\Users\user\Desktop\ddd\Doc-Asistant>cd doc-asistant
+
+C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>python -m venv venv
+
+C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>venv\Scripts\activate
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>cd data
+Системе не удается найти указанный путь.
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>mkdir data
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>mkdir src
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>mkdir notebooks
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>mkdir models
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>mkdir tests
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>nano requarements.txt
+"nano" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>touch src/_init.py/ README.md .gitignore
+"touch" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>typenote src/_init_.py/ README.md .gitignore
+"typenote" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+(venv) C:\Users\user\Desktop\ddd\Doc-Asistant\doc-asistant>
+
+
+C:\Users\user>cd doc-asistant
+C:\Users\user\doc-asistant>start.
+C:\Users\user\doc-asistant>python -m venv venv
+C:\Users\user\doc-asistant>venv\Scripts\activate
+pip install -r requirement.txt
+pip freeza > requirements.lock
+git init
+dir /a
+git config --global user.name "Artem"
+git config --global user.email "artemmusin99524@gmail.com"
+git config -- global --list
+git add.
+git commit - "..."
+git push
+git status
+pip install dvc[s3]
+dvc init
