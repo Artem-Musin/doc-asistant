@@ -16,3 +16,4 @@ __pycache__/
 .idea/
 .vscode/
 *.log
+/cooking_clean (1).csv

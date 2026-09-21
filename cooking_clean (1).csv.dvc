@@ -1,0 +1,5 @@
+outs:
+- md5: ee5c0c3c09f2a1b7ba42b96618f642e2
+  size: 389998
+  hash: md5
+  path: cooking_clean (1).csv
