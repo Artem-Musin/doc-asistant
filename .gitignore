@@ -1,0 +1,18 @@
+# Виртуальное окружение
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# игнорируйте кэш:
+.dvc/cache/
+.dvc/tmp/
+
+# Прочее
+.env
+.idea/
+.vscode/
+*.log
