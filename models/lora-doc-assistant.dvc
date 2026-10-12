@@ -1,0 +1,6 @@
+outs:
+- md5: f98d20dc3c112286bb955d0d5632288d.dir
+  size: 15815588
+  nfiles: 6
+  hash: md5
+  path: lora-doc-assistant
