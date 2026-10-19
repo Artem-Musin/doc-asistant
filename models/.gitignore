@@ -3,3 +3,5 @@
 /lora-doc-assistant
 /faiss_recipes.index
 /faiss_recipes_meta.json
+/faiss_recipes_l2.index
+/faiss_recipes_l2_meta.json

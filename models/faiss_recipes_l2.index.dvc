@@ -1,0 +1,5 @@
+outs:
+- md5: b777dae324d2539cdb793fff82cf7b87
+  size: 1617453
+  hash: md5
+  path: faiss_recipes_l2.index

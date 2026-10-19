@@ -1,0 +1,5 @@
+outs:
+- md5: 841b05929056d864e992caed749d03ea
+  size: 122083
+  hash: md5
+  path: faiss_recipes_l2_meta.json
