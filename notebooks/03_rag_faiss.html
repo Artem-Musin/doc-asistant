@@ -8597,17 +8597,38 @@ Sources: ['ultimate chocolate cake', 'chocolate mochadot cake', 'chocolate eclai
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fe7e4778-6a43-42e7-8f11-fff8226107a9">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe7e4778-6a43-42e7-8f11-fff8226107a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="RAG-%D0%BD%D0%B0-FAISS:-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B-(%D0%BF%D0%B5%D1%80%D0%B2%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)">RAG на FAISS: результаты (первая версия)<a class="anchor-link" href="#RAG-%D0%BD%D0%B0-FAISS:-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B-(%D0%BF%D0%B5%D1%80%D0%B2%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)">¶</a></h2><blockquote>
+<p><strong>Финальная версия по методичке:</strong> см. <code>03.1_rag_metodichka.ipynb</code> (IndexFlatL2, k=10).</p>
+</blockquote>
+<p>Пайплайн: cooking_clean.csv -&gt; чанки 500/50 -&gt; BERT-эмбеддинги
+-&gt; FAISS (IndexFlatIP) -&gt; top-3 -&gt; LLM (Ollama gpt-oss:120b) -&gt; ответ + источники.</p>
+<p>Параметры:</p>
+<ul>
+<li>500 рецептов -&gt; 1053 чанка (avg 2.11 на рецепт)</li>
+<li>Энкодер: paraphrase-multilingual-MiniLM-L12-v2 (384d, мультиязычный)</li>
+<li>FAISS: IndexFlatIP, cosine через inner product</li>
+<li>Index size: 1.6 МБ</li>
+</ul>
+<h3 id="%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B">Тестовые запросы<a class="anchor-link" href="#%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B">¶</a></h3><p>| Запрос | Top-1 | Score |
+| chocolate cake | ultimate chocolate cake | 0.712 |
+| шоколадный торт | ultimate chocolate cake | 0.724 |
+| apple pie with cinnamon | country apple pie | 0.699 |
+| рецепт с яблоками | bobbies apple pie filling | 0.689 |</p>
+<p>Русские и английские запросы дают одни и те же результаты:
+мультиязычный энкодер находит семантические соответствия без перевода.</p>
+<h3 id="%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81/%D0%B1%D0%B5%D0%B7-RAG">Сравнение с/без RAG<a class="anchor-link" href="#%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81/%D0%B1%D0%B5%D0%B7-RAG">¶</a></h3><p><strong>Без RAG:</strong> "Расскажи про шоколадный торт из наших рецептов" -&gt; "Нет данных."
+(LLM не знает про наши рецепты)</p>
+<p><strong>С RAG:</strong> тот же вопрос -&gt; 3 рецепта из датасета с ингредиентами,
+приготовлением, конвертацией единиц (oz-&gt;г, F-&gt;C) и источниками.</p>
+<h3 id="%D0%92%D1%8B%D0%B2%D0%BE%D0%B4">Вывод<a class="anchor-link" href="#%D0%92%D1%8B%D0%B2%D0%BE%D0%B4">¶</a></h3><p>RAG обеспечивает честность ответов через контекст,
+а не через обучение на маленькой выборке (как LoRA).</p>
 </div>
 </div>
 </div>
