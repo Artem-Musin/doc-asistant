@@ -19,4 +19,5 @@ __pycache__/
 /cooking_clean (1).csv
 data/*.csv
 .ipynb_checkpoints/
-backup_src/
+backup_src/notebooks/mlflow.db 
+notebooks/mlruns/ 
